@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="container">
+  <article class="content">
+  <h1 class="header">Posts</h1>
+    <div class="ui items">
+      {% for post in paginator.posts %}
+      <div class="item">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <div class="content">
+          <a class="header" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+          <div class="meta">
+            {{ post.date | date: date_format }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+  {% include paginator.html %}
+</div>

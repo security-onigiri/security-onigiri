@@ -1,0 +1,34 @@
+<div class="four wide column">
+  <aside class="ui tertiary blue raised segment">
+    <h1 class="header">Categories</h1>
+    <div class="ui accordion">
+      {% for category in site.categories %}
+      <div class="title">
+        <i class="dropdown icon"></i>
+        {{category | first}}
+      </div>
+      <div class="content">
+        <div class="ui list">
+          {% for posts in category %}
+          {% for post in posts %}
+          {% if post.url %}
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          <div class="item">
+            <div class="content">
+              <a class="header" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+              <div class="right floated">
+                {{ post.date | date: date_format }}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </aside>
+</div>

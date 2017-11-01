@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar is-dark">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="{{ "/" | relative_url }}">
+        <img src="{% asset_path icon_avatar.jpg %}" alt="Security onigiri">
+			</a>
+      <div class="navbar-burger burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+		</div>
+		<div class="navbar-menu">
+			<div class="navbar-start">
+        {% for page in site.pages %}
+        {% if page.title %}
+        <a class="navbar-item" href="{{ page.url | relative_url }}">
+          <span class="icon">
+            <i class="fa fa-{{page.icon}}"></i>
+          </span>
+          {{ page.title }}
+        </a>
+        {% endif %}
+        {% endfor %}
+			</div>
+			<div class="navbar-end">
+				<a class="navbar-item" href="{{ "/feed.xml" | relative_url }}">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+					Subscribe
+				</a>
+			</div>
+		</div>
+	</nav>
+</header>

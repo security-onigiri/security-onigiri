@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="container">
+  <article class="content">
+  <header>
+    <h1 class="header">{{ page.title | escape }}</h1>
+    {% for tag in page.tags %}
+    <span class="tag">
+      {{ tag }}
+    </span>
+    {% endfor %}
+    <p>
+
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}</p>
+  </header>
+
+    {{ content }}
+  </article>
+  {% include disqus_comments.html %}
+</div>
+<div class="four wide column">
+  {% include sidebar.html %}
+</div>

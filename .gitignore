@@ -1,0 +1,7 @@
+*.gem
+*.swp
+.bundle
+.sass-cache
+_site
+Gemfile.lock
+.asset-cache

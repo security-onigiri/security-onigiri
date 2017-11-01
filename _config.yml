@@ -1,0 +1,23 @@
+# jekyll serve
+host: 0.0.0.0
+
+# Build settings
+theme: security-onigiri
+plugins:
+  - jekyll-assets
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - bulma-sass
+
+# Theme settings
+paginate: 10
+disqus_username: bananaappletw
+twitter: https://twitter.com/bananaappletw
+github: https://github.com/bananaappletw
+stack_overflow: https://stackoverflow.com/users/4446356/bananaappletw
+facebook: https://www.facebook.com/bananaappletw
+linkedin: https://www.linkedin.com/in/bananaappletw/
+disqus:
+  shortname: bananaappletw
+google_analytics: ua-105275050-1

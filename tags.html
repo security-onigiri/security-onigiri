@@ -1,0 +1,19 @@
+---
+layout: page
+title: Tags
+icon: tags
+permalink: /tags/
+---
+{% for post in site.posts %}
+  {% assign tags = tags | concat: post.tags %}
+{% endfor %}
+{% assign tags = tags | uniq | sort %}
+
+{% for tag in tags %}
+  <h3 id="{{ tag | escape }}">{{ tag }}</h3>
+  <ul>
+  {% for post in site.tags[tag] %}
+    <li><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}
