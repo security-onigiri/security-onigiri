@@ -1,14 +1,6 @@
 ---
 layout: default
 ---
-<div class="fourteen wide column">
-  <article class="ui green raised segment">
-    <header>
-      <h1 class="post-title">{{ page.title | escape }}</h1>
-    </header>
-    <div class="post-content">
-      {{ content }}
-    </div>
-  </article>
-  {% include disqus_comments.html %}
-</div>
+{% include hero.html %}
+{{ content }}
+{% include disqus_comments.html %}

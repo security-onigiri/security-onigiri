@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "security-onigiri"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.2"
   spec.authors       = ["bananaappletw"]
   spec.email         = ["bananaappletw@gmail.com"]
 

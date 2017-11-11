@@ -1,25 +1,53 @@
 ---
-layout: default
+layout: page
 ---
-
-<div class="container">
-  <article class="content">
-  <h1 class="header">Posts</h1>
-    <div class="ui items">
-      {% for post in paginator.posts %}
-      <div class="item">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <div class="content">
-          <a class="header" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+<div class="columns is-multiline is-desktop">
+  {% for post in paginator.posts %}
+  <div class="column is-half">
+    <div class="box">
+        <p class="title">
+          {{ post.title }}
+        </p>
+      <div class="content">
+        <p class="subtitle">
+          <span class="icon fa fa-link">
+          </span>
+          <a href="{{post.source-url}}">
+            {{post.source-url}}
           </a>
-          <div class="meta">
-            {{ post.date | date: date_format }}
+        </p>
+        <p class="subtitle">
+          Translated by {{ post.author }}
+        </p>
+      </div>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <div class="tags">
+              {% for tag in post.tags %}
+              {% assign tag_page= site.pages | where: "name", "tags.html" | first  %}
+              <a href="{{ tag_page.url | append: "#" | append: tag | relative_url }}" class="tag">
+                {{ tag }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="level-item">
+            <p>
+            {{ post.date | date: "%b %-d, %Y" }}
+            </p>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <a href="{{ post.url | relative_url }}" class="button is-success">Read more</a>
           </div>
         </div>
       </div>
-      {% endfor %}
     </div>
-  </article>
+  </div>
+  {% endfor %}
+</div>
+<div class="section">
   {% include paginator.html %}
 </div>
