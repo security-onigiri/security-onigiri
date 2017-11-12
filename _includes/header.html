@@ -2,15 +2,15 @@
   <nav class="navbar is-dark">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="{{ "/" | relative_url }}">
-        <img src="{% asset_path icon_avatar.jpg %}" alt="Security onigiri">
+        <img src="{% asset_path icon_avatar.png %}" alt="Security onigiri">
 			</a>
-      <div class="navbar-burger burger">
+      <div class="navbar-burger" data-target="navMenu">
         <span></span>
         <span></span>
         <span></span>
       </div>
 		</div>
-		<div class="navbar-menu">
+		<div class="navbar-menu" id="navMenu">
 			<div class="navbar-start">
         {% for page in site.pages %}
         {% if page.title %}
