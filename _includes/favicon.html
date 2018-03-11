@@ -1,7 +1,8 @@
-<link rel="shortcut icon" type="image/png" href="{% asset_path favicon.ico %}">
-<link rel="apple-touch-icon" sizes="180x180" href="{% asset_path apple-touch-icon.png %}">
-<link rel="icon" type="image/png" sizes="32x32" href="{% asset_path favicon-32x32.png %}">
-<link rel="icon" type="image/png" sizes="16x16" href="{% asset_path favicon-16x16.png %}">
-<link rel="manifest" href="{% asset_path manifest.json %}">
-<link rel="mask-icon" href="{% asset_path safari-pinned-tab.svg %}" color="#5bbad5">
+<link rel="shortcut icon" type="image/png" href="{{ assets["favicon.ico"].digest_path }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ assets["apple-touch-icon.png"].digest_path }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ assets["favicon-32x32.png"].digest_path }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ assets[" favicon-16x16.png"].digest_path }}">
+<link rel="manifest" href="{{ assets["manifest.json"].digest_path }}">
+<link rel="mask-icon" href="{{ assets["safari-pinned-tab.svg"].digest_path }}" color="#5bbad5">
 <meta name="theme-color" content="#ffffff">
+

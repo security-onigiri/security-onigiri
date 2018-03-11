@@ -1,47 +1,39 @@
-# security onigiri
+# security-onigiri
 
-[Theme preview]()
+This blog is powered by [jekyll](http://jekyllrb.com/)
 
-## Installation
+## Get started
 
 ```bash
-git clone https://github.com/security-onigiri/security-onigiri [your_github_username].github.io
-cd [your_github_username].github.io
+gem install jekyll bundler
+git clone https://github.com/security-onigiri/security-onigiri
+cd security-onigiri
 bundle install
-jekyll serve
+bundle exec jekyll serve
 ```
 
-## Usage
+Now browse to http://localhost:4000
 
-### Enabling comments (via Disqus)
+## Writing a post
 
-Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post.
+Access admin panel on http://localhost:4000/admin
 
-To enable it, add the following lines to your Jekyll site:
+Switch to `Posts` section and clink on `New post` button
 
-```yaml
-  disqus:
-    shortname: my_disqus_shortname
+Enter your post name on `Title`
+
+### Metadata
+
+press "New metadata field" to add a column in post header
+
+- Add `post` into `layout` field
+- Add `your_name` into `author` field
+- Add `original-link` into `source-url` field
+
+## Deploy
+
+```bash
+./deploy.sh
 ```
 
-You can find out more about Disqus' shortnames [here](https://help.disqus.com/customer/portal/articles/466208).
-
-Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
-
-If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
-
---
-
-### Enabling Google Analytics
-
-To enable Google Anaytics, add the following lines to your Jekyll site:
-
-```yaml
-  google_analytics: UA-NNNNNNNN-N
-```
-
-Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Or open a pull request instead.

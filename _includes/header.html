@@ -2,7 +2,7 @@
   <nav class="navbar is-dark">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="{{ "/" | relative_url }}">
-        <img src="{% asset_path icon_avatar.png %}" alt="Security onigiri">
+        {% asset icon_avatar.png %}
 			</a>
       <div class="navbar-burger" data-target="navMenu">
         <span></span>
@@ -13,10 +13,10 @@
 		<div class="navbar-menu" id="navMenu">
 			<div class="navbar-start">
         {% for page in site.pages %}
-        {% if page.title %}
+        {% if page.title and page.autogen == nil %}
         <a class="navbar-item" href="{{ page.url | relative_url }}">
           <span class="icon">
-            <i class="fa fa-{{page.icon}}"></i>
+            <i class="fas fa-{{page.icon}}"></i>
           </span>
           {{ page.title }}
         </a>
@@ -26,7 +26,7 @@
 			<div class="navbar-end">
 				<a class="navbar-item" href="{{ "/feed.xml" | relative_url }}">
           <span class="icon">
-            <i class="fa fa-rss"></i>
+            <i class="fas fa-rss"></i>
           </span>
 					Subscribe
 				</a>
