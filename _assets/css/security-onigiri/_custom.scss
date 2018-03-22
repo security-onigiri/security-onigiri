@@ -1,4 +1,16 @@
 .box
 {
-  height: 100%;
+  height:100%;
+  section{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+
+    .level,.level-left,level-right{
+      flex-direction: row;
+    }
+    .level:last-child{
+      margin-top: auto;
+    }
+  }
 }

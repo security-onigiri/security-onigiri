@@ -5,47 +5,50 @@ layout: page
   {% for post in paginator.posts %}
   <div class="column is-half">
     <div class="box">
-        <p class="title">
-          {{ post.title }}
-        </p>
-      <div class="content">
-        <p class="subtitle">
-
-        <span class="icon">
-          <i class="fas fa-link"></i>
-        </span>
-        <a href="{{post.source-url}}">
-          {{post.source-url}}
-        </a>
-        </p>
-        <p class="subtitle">
+      <section>
+        <div class="level">
+          <h1 class="title">
+            {{ post.title }}
+          </h1>
+        </div>
+        <div class="level">
+          <h2 class="subtitle">
+            <a href="{{post.source-url}}">
+              <span class="icon">
+                <i class="fas fa-link"></i>
+              </span>
+              {{post.source-url}}
+            </a>
+          </h2>
+        </div>
+        <div class="level">
           Translated by {{ post.author }}
-        </p>
-      </div>
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <div class="tags">
-              {% for tag in post.tags %}
-              {% assign tag_page= site.pages | where: "name", "tags.html" | first  %}
-              <a href="{{ tag_page.url | append: "#" | append: tag | relative_url }}" class="tag">
-                {{ tag }}
-              </a>
-              {% endfor %}
+        </div>
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div class="tags">
+                {% for tag in post.tags %}
+                {% assign tag_page= site.pages | where: "name", "tags.html" | first  %}
+                <a href="{{ tag_page.url | append: "#" | append: tag | relative_url }}" class="tag">
+                  {{ tag }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="level-item">
+              <p>
+              {{ post.date | date: "%b %-d, %Y" }}
+              </p>
             </div>
           </div>
-          <div class="level-item">
-            <p>
-            {{ post.date | date: "%b %-d, %Y" }}
-            </p>
+          <div class="level-right">
+            <div class="level-item">
+              <a href="{{ post.url | relative_url }}" class="button is-success">Read more</a>
+            </div>
           </div>
         </div>
-        <div class="level-right">
-          <div class="level-item">
-            <a href="{{ post.url | relative_url }}" class="button is-success">Read more</a>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
   {% endfor %}
