@@ -165,7 +165,7 @@ Before we dive into these headers, it is good to know that ELF has two complemen
 
 An ELF file consists of zero or more segments, and describe how to create a process/memory image for runtime execution. When the kernel sees these segments, it uses them to map them into virtual address space, using the mmap(2) system call. In other words, it converts predefined instructions into a memory image. If your ELF file is a normal binary, it requires these program headrs, otherwise it won't run. And it uses these headers, with the underlying data structure, to form a process. This process is similar for shared libraries.
 
->一個 ELF 檔案由至少零個區段組成，並且描述如何創造一個執行時期的行程/記憶體映像。當核心看到這些區段，它使用系統呼叫 mmap(2) 將他們映射到虛擬位址空間，換句話來說，它轉換預先定義的指令到記憶體映像中。如果你的 ELF 檔案是一個普通的二進位檔，它將需求這些程式標頭，否則無法運行。並且它使用這些標頭，與底層資料結構來形成一個程序。這個程序與共享函式庫類似。
+>一個 ELF 檔案由零個或更多區段組成，並且描述如何創造一個執行時期的行程/記憶體映像。當核心看到這些區段，它使用系統呼叫 mmap(2) 將他們映射到虛擬位址空間，換句話來說，它轉換預先定義的指令到記憶體映像中。如果你的 ELF 檔案是一個普通的二進位檔，它將需求這些程式標頭，否則無法運行。並且它使用這些標頭，與底層資料結構來形成一個程序。這個程序與共享函式庫類似。
 
 
 ![](https://assets.linux-audit.com/wp-content/uploads/2015/08/elf-program-headers-segments.png)
