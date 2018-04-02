@@ -2,5 +2,9 @@
 layout: default
 ---
 {% include hero.html %}
-{{ content }}
-{% include disqus_comments.html %}
+<section class="container">
+  {{ content }}
+  <section class="section">
+    {% include disqus_comments.html %}
+  </section>
+</section>

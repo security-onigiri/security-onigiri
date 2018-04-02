@@ -1,28 +1,6 @@
 ---
-layout: page
-title: Tags
+layout: tags
+title: 標籤
 icon: tags
 permalink: /tags/
 ---
-
-{% for post in site.posts %}
-  {% assign tags = tags | concat: post.tags %}
-{% endfor %}
-{% assign tags = tags | uniq | sort %}
-<div class="tags">
-  {% for tag in tags %}
-  {% assign tag_page= site.pages | where: "name", "tags.html" | first  %}
-  <a href="{{ tag_page.url | append: "#" | append: tag | relative_url }}" class="tag">
-    {{ tag }}
-  </a>
-  {% endfor %}
-</div>
-
-{% for tag in tags %}
-  <h1 id="{{ tag }}" class="title">{{ tag }}</h1>
-  <ul>
-  {% for post in site.tags[tag] %}
-    <li><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
-{% endfor %}
