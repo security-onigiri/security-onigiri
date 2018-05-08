@@ -3,6 +3,11 @@ title: 你不算個資安專家，如果你只是...
 layout: post
 author: jhe
 source-url: https://www.linkedin.com/pulse/well-you-security-specialist-alex-yang
+tags:
+- InfoSec
+- forensics
+- Penetration Test
+- Reversing Engineering
 ---
 
 # Well, you are not a "Security Specialist" if you ...
