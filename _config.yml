@@ -34,3 +34,10 @@ disqus_username: bananaappletw
 disqus:
   shortname: bananaappletw
 google_analytics: UA-115432550-1
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

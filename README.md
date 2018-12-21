@@ -26,14 +26,18 @@ Enter your post name on `Title`
 
 press "New metadata field" to add a column in post header
 
-- Add `post` into `layout` field
 - Add `your_name` into `author` field
 - Add `original-link` into `source-url` field
 
 ## Deploy
 
+Commit your change, or open a pull request to this repo.
+
+Then execute `deploy.sh`.
+
+See your changes on [https://security-onigiri.github.io/](https://security-onigiri.github.io/).
+
 ```bash
 ./deploy.sh
 ```
 
-Or open a pull request instead.
