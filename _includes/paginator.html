@@ -1,4 +1,4 @@
-<nav class="pagination">
+<nav class="pagination is-centered is-large" role="navigation" aria-label="pagination">
   {% if paginator.previous_page %}
     {% include prev_page.html %}
   {% endif %}
@@ -7,10 +7,10 @@
     {% include next_page.html %}
   {% endif %}
   <ul class="pagination-list">
-	{% for page in (1..paginator.total_pages) %}
-    <li>
-    {% include page.html %}
-    </li>
-	{% endfor %}
+    {% if paginator.page_trail %}
+    {% for trail in paginator.page_trail %}
+      {% include page.html trail=trail %}
+    {% endfor %}
+    {% endif %}
   </ul>
 </nav>
